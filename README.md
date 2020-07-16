@@ -1,4 +1,2 @@
-# DS_practice
-Practice python problems
-
+# Practice python problems
 This repo contains solutions for various datastructure and algorithm problems!
