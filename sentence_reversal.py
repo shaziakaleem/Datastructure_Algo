@@ -1,13 +1,6 @@
 # Sentence reversal
 
 def reverse_list(l):
-    # x =''
-    # print(l)
-    # for i in range(len(l)-1,-1,-1):
-    #     print(i)
-    #     x = x+' '+l[i]
-    #     print(x)
-    # return x
     start = 0
     end = len(l)-1
     while start<end:
