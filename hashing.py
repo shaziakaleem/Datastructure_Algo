@@ -1,8 +1,8 @@
 class HashTable:
     def __init__(self,size):
         self.size = size
-        self.slots = None
-        self.data = None
+        self.slots = [None] * self.size
+        self.data =[None] * self.size
     
     def hashfunction(self,key,size):
         return key%size
@@ -15,12 +15,13 @@ class HashTable:
         if self.slots[hashvalue]==None:
             self.slots[hashvalue] = key
             self.data[hashvalue] = data
+            return data
         else:
             if self.slots[hashvalue]==key:
                 self.data[hashvalue] = 11
             else:
                 nextslot =  self.rehash(hashvalue,len(self.slots))
-                while nextslot!=None and self.slots[nextslot]!==key:
+                while nextslot!=None and self.slots[nextslot]!=key:
                     nextslot = self.rehash(nextslot,len(self.slots))
                 
                 slots[nextslot] = key
@@ -42,12 +43,15 @@ class HashTable:
                     data = self.data[nextslot]
         return data
     
-     def __getitem__(self,key):
+    def __getitem__(self,key):
         return self.get(key)
 
     def __setitem__(self,key,data):
         self.put(key,data)
 
 
-
+h = HashTable(5)
+h[1] = 'one'
+h[3] = 'three'
+print (h[3])
 
