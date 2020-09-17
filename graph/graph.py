@@ -15,7 +15,7 @@ class Vertex:
     def getweight(self,nbr):
         return self.connectedTo[nbr]
     
-    def __str__self):
+    def __str__(self):
         return self.id+"connected to"+ str(x.id for x in self.connectedTo)
 
 class Graph:
